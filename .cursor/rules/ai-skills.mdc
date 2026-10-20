@@ -1,0 +1,12 @@
+---
+description: Repository standards and skill validation for AI-Skills
+globs: *
+alwaysApply: true
+---
+
+# AI-Skills Core Rules
+
+- Follow the standards defined in [AGENTS.md](../../AGENTS.md).
+- Skill directories must match frontmatter `name` in kebab-case.
+- Run `python scripts/validate-skills.py` to verify skills locally.
+- Use `.github/pull_request_template.md` format for pull request summaries.

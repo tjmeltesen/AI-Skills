@@ -1,0 +1,16 @@
+---
+description: Job applications workflow and guardrails
+globs: JobApplications/**/*
+alwaysApply: false
+---
+
+# JobApplications Rules
+
+- Follow the workflow defined in [JobApplications/AGENTS.md](../../JobApplications/AGENTS.md).
+- Pipeline sequence:
+  1. `resume-parse`: Parses the resume once into `job-work/profile.md`.
+  2. `job-search`: Evaluates listings against `job-work/profile.md`.
+  3. `apply-to-job`: Drafts application answers into `job-work/answers.md`.
+- Guardrails:
+  - Strict truthfulness: Only use facts stated in `job-work/profile.md`.
+  - Always pause for user approval before submitting any application materials.
