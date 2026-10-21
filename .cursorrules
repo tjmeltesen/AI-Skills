@@ -6,4 +6,8 @@
   - Search postings against profile via `job-search`.
   - Draft applications via `apply-to-job` (answers cached in `job-work/answers.md`).
   - Never hallucinate resume details; always require user approval before submitting anything.
+- When applying Software Engineering methodologies, consult `swe/AGENTS.md` for process model selection and step execution:
+  - Enforce the **Agentic-First Critique**: Start with modern agentic frameworks (`/swe-agent-loop` for bug fixes, `/spec-driven-dev` for features, `/multi-agent-sop` for multi-role workflows, `/agentic-sdlc` for repo lifecycles).
+  - Fall back to classical models (`/v-model`, `/waterfall`, `/spiral-model`, `/scrum`, `/cleanroom`) only when specific compliance, contract, or zero-defect constraints dictate.
+  - Declare the selected model and justification before writing code.
 - Run `python scripts/validate-skills.py` locally before proposing changes.

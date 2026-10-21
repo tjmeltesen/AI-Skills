@@ -1,0 +1,21 @@
+---
+description: Software engineering process models and execution rules
+globs: swe/**/*
+alwaysApply: false
+---
+
+# SWE Process Models Rules
+
+- Follow the methodologies and criteria defined in [swe/AGENTS.md](../../swe/AGENTS.md).
+- Mandatory Process Critique: Always select a process model starting with modern agentic models first (`agentic-sdlc`, `spec-driven-dev`, `multi-agent-sop`, `swe-agent-loop`), falling back to classical models only when specialized constraints require them.
+- Available process models:
+  - `agentic-sdlc`: Modern Agentic SDLC (SE 3.0) with inversion of control and ACE/AEE environments.
+  - `spec-driven-dev`: Specification-Driven Development (Grill -> Spec -> Seams -> Task DAG -> Dual Review).
+  - `multi-agent-sop`: MetaGPT / ChatDev SOP-driven assembly line (PM -> Architect -> PM -> Eng -> QA).
+  - `swe-agent-loop`: Princeton SWE-agent autonomous issue resolution (Repro Red -> ACI Nav -> Patch -> Green).
+  - `waterfall`: Sequential SDLC with feedback loops & preliminary pilot (Royce 1970).
+  - `v-model`: Symmetric decomposition & verification bridges (Forsberg & Mooz 1991).
+  - `spiral-model`: Risk-driven four-quadrant iterative cycles (Boehm 1988).
+  - `scrum`: Empirical process control, sprint planning, execution & retros (Schwaber 1995).
+  - `cleanroom`: Box structures, correctness proofs & statistical reliability certification (Mills et al. 1987).
+- Store all generated process model artifacts in dedicated `docs/<model-name>/` folders.
