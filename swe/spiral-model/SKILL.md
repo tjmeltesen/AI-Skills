@@ -50,6 +50,7 @@ Execute software engineering through risk-driven iterative cycles combining the 
 | --- | --- |
 | Claude Code | `/spiral-model [cycle or task]` |
 | Cursor | `/spiral-model [cycle or task]` |
+| Gemini CLI, Antigravity | `/spiral-model [cycle or task]` |
 | Grok Build | `/spiral-model [cycle or task]` |
 | Codex, ChatGPT | `$spiral-model` then the cycle or task |
 
@@ -144,3 +145,9 @@ IF highest_risk_exposure > tolerance_threshold:
     Isolate the risk into a spike/prototype in Quadrant 2.
     Measure until risk exposure falls below threshold before advancing.
 ```
+
+## Single-Agent & Non-Isolated Runtime Fallbacks
+
+If executing in a single-context CLI or chat interface without native subagent spawning or automatic branch isolation:
+1. **Workspace Isolation:** If `workspace: branch` is not provisioned automatically, create and checkout an isolated git branch (`git checkout -b <branch-name>`) before creating or modifying files.
+2. **Context & Role Simulation:** In environments without subagent tools, assume each role sequentially within the primary session. Use the documented SOP artifacts as clear boundaries between phases.

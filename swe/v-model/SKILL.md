@@ -49,6 +49,7 @@ Execute software engineering through symmetric decomposition (the downward left 
 | --- | --- |
 | Claude Code | `/v-model [phase or scope]` |
 | Cursor | `/v-model [phase or scope]` |
+| Gemini CLI, Antigravity | `/v-model [phase or scope]` |
 | Grok Build | `/v-model [phase or scope]` |
 | Codex, ChatGPT | `$v-model` then the phase or scope |
 

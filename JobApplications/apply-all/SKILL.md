@@ -3,7 +3,7 @@ name: apply-all
 description: >-
   Batch process and draft applications for open roles in job-work/jobs.md.
   Cross-checks job-work/applied.md to avoid duplicate applications and enforce
-  cooldown limits. References and updates profile coverage history over time.
+  cooldown limits. References profile facts and logs submissions to job-work/applied.md.
   Stops for user review and approval before submitting.
 trigger: /apply-all
 argument-hint: "[optional limit count or company filter]"
@@ -37,7 +37,7 @@ tags:
   - batch
   - orchestration
 metadata:
-  short-description: "Batch application workflow with profile coverage tracking"
+  short-description: "Batch application workflow with applied status tracking"
 ---
 
 # Apply all
@@ -54,6 +54,7 @@ Text after the command is an optional batch size limit or company filter.
 | --- | --- |
 | Claude Code | `/apply-all [limit or filter]` |
 | Cursor | `/apply-all [limit or filter]` |
+| Gemini CLI, Antigravity | `/apply-all [limit or filter]` |
 | Grok Build, Grok Bot | `/apply-all [limit or filter]` |
 | Codex, ChatGPT | `$apply-all` then limit or filter |
 
@@ -63,7 +64,7 @@ If no argument is given, processes all pending roles in `job-work/jobs.md`.
 
 - **Discovered roles**: `job-work/jobs.md`. Bulleted list of open postings written by `job-search`.
 - **Applied tracking**: `job-work/applied.md`. Log of submitted applications read to prevent duplicate applications and enforce company cooldowns.
-- **Candidate profile**: `job-work/profile.md`. Single source of truth for resume facts; tracks application history and coverage over time.
+- **Candidate profile**: `job-work/profile.md`. Single source of truth for resume facts. Read-only; do not modify.
 - **Answer cache**: `job-work/answers.md`. Shared approved answers for non-resume recurring questions.
 - **Navigation guide**: `JobApplications/apply-to-job/form-filling.md`. General ATS quirks, field entry guidelines, and verification rules.
 
@@ -82,8 +83,7 @@ If no argument is given, processes all pending roles in `job-work/jobs.md`.
 6. Upon user approval:
    a. For approved roles being submitted, follow portal guidelines in `JobApplications/apply-to-job/form-filling.md`.
    b. Log each completed submission into `job-work/applied.md` with company, title, date, URL, and status.
-   c. Update `job-work/profile.md` under `## Application history` to maintain reliable coverage over time.
-   d. Update the role's status in `job-work/jobs.md` from `pending` to `applied`.
+   c. Update the role's status in `job-work/jobs.md` from `pending` to `applied`.
 7. Return a summary of processed applications, remaining pending roles, and company cooldown statuses.
 
 ## Batch reply format
@@ -117,7 +117,7 @@ Roles queued: {count}
 - Never submit an application without explicit user approval.
 - Always cross-check `job-work/applied.md` before drafting to ensure no company is double-applied.
 - Update `job-work/applied.md` immediately upon approved submission.
-- Update `job-work/profile.md` application history to maintain coverage tracking across sessions.
+- Do not edit `job-work/profile.md`; keep all submission history in `job-work/applied.md`.
 - Update `job-work/jobs.md` entry statuses to reflect pipeline progress (`pending` -> `drafted` -> `applied`).
 - If the user says STOP, immediately halt all batch automation.
 - During runtime, update `JobApplications/apply-to-job/form-filling.md` with any newly discovered ATS behaviors.

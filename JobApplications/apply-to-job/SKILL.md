@@ -12,6 +12,8 @@ compatibility: Requires job-work/profile.md (from resume-parse) and write access
 role: "Application Tailoring Specialist"
 allowed-tools:
   - read_file
+  - search_web
+  - run_command
   - write_file
   - edit_file
 enable-write-tools: true
@@ -53,6 +55,7 @@ Text after the command is the listing URL or pasted listing.
 | --- | --- |
 | Claude Code | `/apply-to-job [listing]` |
 | Cursor | `/apply-to-job [listing]` |
+| Gemini CLI, Antigravity | `/apply-to-job [listing]` |
 | Grok Build, Grok Bot | `/apply-to-job [listing]` |
 | Codex, ChatGPT | `$apply-to-job` then the listing |
 

@@ -53,6 +53,7 @@ Execute software engineering through the modern **Agentic SDLC (SE 3.0)** framew
 | --- | --- |
 | Claude Code | `/agentic-sdlc [feature or initiative]` |
 | Cursor | `/agentic-sdlc [feature or initiative]` |
+| Gemini CLI, Antigravity | `/agentic-sdlc [feature or initiative]` |
 | Grok Build | `/agentic-sdlc [feature or initiative]` |
 | Codex, ChatGPT | `$agentic-sdlc` then the feature or initiative |
 
@@ -132,3 +133,9 @@ Execute software engineering through the modern **Agentic SDLC (SE 3.0)** framew
      - **Merge Danger:** One-way vs. Two-way door classification and blast radius.
   2. Escalate only genuine trade-offs or high-risk decisions requiring human judgment.
 - **Exit Gate:** Human maintainer approves PR; automated CI check passes; branch merged.
+
+## Single-Agent & Non-Isolated Runtime Fallbacks
+
+If executing in a single-context CLI or chat interface without native subagent spawning or automatic branch isolation:
+1. **Workspace Isolation:** If `workspace: branch` is not provisioned automatically, create and checkout an isolated git branch (`git checkout -b <branch-name>`) before creating or modifying files.
+2. **Context & Role Simulation:** In environments without subagent tools, assume each role sequentially within the primary session. Use the documented SOP artifacts as clear boundaries between phases.

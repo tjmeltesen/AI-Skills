@@ -48,6 +48,7 @@ Execute software engineering through empirical process control (transparency, in
 | --- | --- |
 | Claude Code | `/scrum [phase or sprint task]` |
 | Cursor | `/scrum [phase or sprint task]` |
+| Gemini CLI, Antigravity | `/scrum [phase or sprint task]` |
 | Grok Build | `/scrum [phase or sprint task]` |
 | Codex, ChatGPT | `$scrum` then the phase or sprint task |
 

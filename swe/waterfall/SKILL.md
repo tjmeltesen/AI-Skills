@@ -51,6 +51,7 @@ Execute software engineering through a disciplined sequential lifecycle with for
 | --- | --- |
 | Claude Code | `/waterfall [phase or scope]` |
 | Cursor | `/waterfall [phase or scope]` |
+| Gemini CLI, Antigravity | `/waterfall [phase or scope]` |
 | Grok Build | `/waterfall [phase or scope]` |
 | Codex, ChatGPT | `$waterfall` then the phase or scope |
 

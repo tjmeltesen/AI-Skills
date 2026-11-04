@@ -48,6 +48,7 @@ Execute software engineering through **Specification-Driven Development (SDD)**,
 | --- | --- |
 | Claude Code | `/spec-driven-dev [feature or RFC]` |
 | Cursor | `/spec-driven-dev [feature or RFC]` |
+| Gemini CLI, Antigravity | `/spec-driven-dev [feature or RFC]` |
 | Grok Build | `/spec-driven-dev [feature or RFC]` |
 | Codex, ChatGPT | `$spec-driven-dev` then the feature |
 
@@ -122,3 +123,9 @@ Execute software engineering through **Specification-Driven Development (SDD)**,
   2. **Axis 2 (Spec Faithfulness Review):** Does the code faithfully and completely implement everything requested in `SPEC.md`? Were any features omitted or invented?
   3. Run reviews independently so one perspective does not pollute the other.
 - **Completion Criterion:** Both review axes pass with zero blocking comments; Pull Request submitted.
+
+## Single-Agent & Non-Isolated Runtime Fallbacks
+
+If executing in a single-context CLI or chat interface without native subagent spawning or automatic branch isolation:
+1. **Workspace Isolation:** If `workspace: branch` is not provisioned automatically, create and checkout an isolated git branch (`git checkout -b <branch-name>`) before creating or modifying files.
+2. **Context & Role Simulation:** In environments without subagent tools, assume each role sequentially within the primary session. Use the documented SOP artifacts as clear boundaries between phases.

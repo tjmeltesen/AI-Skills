@@ -49,6 +49,7 @@ Execute autonomous software engineering, bug fixing, and feature implementation 
 | --- | --- |
 | Claude Code | `/swe-agent-loop [issue description or URL]` |
 | Cursor | `/swe-agent-loop [issue description or URL]` |
+| Gemini CLI, Antigravity | `/swe-agent-loop [issue description or URL]` |
 | Grok Build | `/swe-agent-loop [issue description or URL]` |
 | Codex, ChatGPT | `$swe-agent-loop` then the issue |
 
@@ -115,3 +116,9 @@ Execute autonomous software engineering, bug fixing, and feature implementation 
      - The diff contains only code directly related to the issue.
   4. Package the solution into a Pull Request with before/after evidence from Step 2 and Step 5.
 - **Completion Criterion:** Repro goes green; entire test suite passes; clean diff prepared for review.
+
+## Single-Agent & Non-Isolated Runtime Fallbacks
+
+If executing in a single-context CLI or chat interface without native subagent spawning or automatic branch isolation:
+1. **Workspace Isolation:** If `workspace: branch` is not provisioned automatically, create and checkout an isolated git branch (`git checkout -b <branch-name>`) before creating or modifying files.
+2. **Context & Role Simulation:** In environments without subagent tools, assume each role sequentially within the primary session. Use the documented SOP artifacts as clear boundaries between phases.
