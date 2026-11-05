@@ -53,6 +53,7 @@ Execute collaborative, multi-agent software engineering through **Standard Opera
 | --- | --- |
 | Claude Code | `/multi-agent-sop [feature or repo task]` |
 | Cursor | `/multi-agent-sop [feature or repo task]` |
+| Gemini CLI, Antigravity | `/multi-agent-sop [feature or repo task]` |
 | Grok Build | `/multi-agent-sop [feature or repo task]` |
 | Codex, ChatGPT | `$multi-agent-sop` then the task |
 
@@ -136,3 +137,9 @@ Execute collaborative, multi-agent software engineering through **Standard Opera
   3. Perform static security auditing and dead-code checks.
   4. If a defect is found, generate an actionable defect ticket and route back to Stage 4.
 - **Handoff Contract:** Zero test failures; 100% acceptance criteria verified; signed-off for human review.
+
+## Single-Agent & Non-Isolated Runtime Fallbacks
+
+If executing in a single-context CLI or chat interface without native subagent spawning or automatic branch isolation:
+1. **Workspace Isolation:** If `workspace: branch` is not provisioned automatically, create and checkout an isolated git branch (`git checkout -b <branch-name>`) before creating or modifying files.
+2. **Context & Role Simulation:** In environments without subagent tools, assume each role sequentially within the primary session. Use the documented SOP artifacts as clear boundaries between phases.

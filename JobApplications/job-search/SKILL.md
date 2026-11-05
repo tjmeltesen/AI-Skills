@@ -12,6 +12,7 @@ role: "Job Discovery Analyst"
 allowed-tools:
   - read_file
   - search_web
+  - run_command
   - edit_file
   - write_file
 enable-write-tools: true
@@ -50,6 +51,7 @@ Text after the command is the target criteria, a posting URL, or both.
 | --- | --- |
 | Claude Code | `/job-search [titles, location, or posting URL]` |
 | Cursor | `/job-search [titles, location, or posting URL]` |
+| Gemini CLI, Antigravity | `/job-search [titles, location, or posting URL]` |
 | Grok Build, Grok Bot | `/job-search [titles, location, or posting URL]` |
 | Codex, ChatGPT | `$job-search` then titles, location, or a posting URL |
 

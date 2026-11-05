@@ -2,13 +2,25 @@
 
 AI-Skills is a modular repository of composable agent skills and workflows following the open Agent Skills specification.
 
+## Mandatory Session Startup
+
+At the start of every session and after context reset, read and apply
+[`core/session-start/SKILL.md`](core/session-start/SKILL.md). It loads the bundled
+Ponytail skill, active by default at `full` level until the user changes or disables
+it. It also loads the coding preferences in
+[`core/design_rules/design-guidelines/SKILL.md`](core/design_rules/design-guidelines/SKILL.md).
+Installation and host-specific setup are in [`docs/framework.md`](docs/framework.md).
+Pstack is enabled as a native Cursor plugin; other hosts can install its portable
+skills with `python scripts/bootstrap.py`. Use pstack workflows when requested;
+host permissions and repository standards govern their execution.
+
 ## Repository Overview
 
 Skills are organized into specialized domain folders at the repository root:
 
+- **`core/`**: Shared startup, bundled Ponytail policy for every host, and my personalized framework for how I like to design repos.
 - **[`JobApplications/`](JobApplications/AGENTS.md)**: Skills for parsing resumes, shortlisting job postings, and tailoring job applications.
 - **[`swe/`](swe/AGENTS.md)**: Software Engineering Process Models, spanning modern Agentic SDLCs (A-SDLC, Spec-Driven Dev, MetaGPT Multi-Agent SOP, SWE-Agent Loop) and classical literature foundations (Waterfall, V-Model, Spiral, Scrum, Cleanroom).
-
 ## Agent Guidelines & Standards
 
 When developing, editing, or executing skills in this repository:

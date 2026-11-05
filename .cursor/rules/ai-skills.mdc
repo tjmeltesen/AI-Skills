@@ -6,6 +6,8 @@ alwaysApply: true
 
 # AI-Skills Core Rules
 
+- At session start and after context reset, read and apply `core/session-start/SKILL.md`, which loads Ponytail by default.
+
 - Follow the standards defined in [AGENTS.md](../../AGENTS.md).
 - Skill directories must match frontmatter `name` in kebab-case.
 - Run `python scripts/validate-skills.py` to verify skills locally.

@@ -42,6 +42,7 @@ Text after the command is the resume path or pasted text.
 | --- | --- |
 | Claude Code | `/resume-parse [path or pasted resume]` |
 | Cursor | `/resume-parse [path or pasted resume]` |
+| Gemini CLI, Antigravity | `/resume-parse [path or pasted resume]` |
 | Grok Build, Grok Bot | `/resume-parse [path or pasted resume]` |
 | Codex, ChatGPT | `$resume-parse` then the path or pasted resume |
 

@@ -49,6 +49,7 @@ Execute software engineering through mathematical rigor, formal defect preventio
 | --- | --- |
 | Claude Code | `/cleanroom [step or component]` |
 | Cursor | `/cleanroom [step or component]` |
+| Gemini CLI, Antigravity | `/cleanroom [step or component]` |
 | Grok Build | `/cleanroom [step or component]` |
 | Codex, ChatGPT | `$cleanroom` then the step or component |
 
@@ -110,6 +111,8 @@ Execute software engineering through mathematical rigor, formal defect preventio
   3. Conduct an independent verification review. Only when all correctness proofs pass is the increment permitted to be compiled.
 
 ### Step 4: Statistical Usage Testing & Reliability Certification
+> **Execution Note:** Because developer debugging and execution are prohibited during verification (`disallowed-tools: ['run_command']`), statistical test cases must be compiled and executed by the human operator, an independent testing subagent, or an external certification pipeline rather than the developer agent.
+
 - **Objective:** Certify the operational reliability and Mean Time Between Failures (MTBF) of the software through scientific statistical sampling.
 - **Agent Action (The Independent Certification Team):**
   1. Build an **Operational Profile** (`docs/cleanroom/operational-profile.md`):

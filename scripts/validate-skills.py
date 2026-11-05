@@ -207,7 +207,9 @@ def main():
     repo_root = Path(__file__).resolve().parent.parent
     print(f"Scanning for SKILL.md files in: {repo_root}")
     
-    ignore_dirs = {".git", ".github", "node_modules", ".venv", "venv", "__pycache__", "scripts"}
+    # Installed third-party copies are runtime dependencies, not authored skills.
+    ignore_dirs = {".git", ".github", ".agents", ".claude", ".gemini", ".cursor",
+                   "node_modules", ".venv", "venv", "__pycache__", "scripts"}
     
     skill_files = []
     for root, dirs, files in os.walk(repo_root):

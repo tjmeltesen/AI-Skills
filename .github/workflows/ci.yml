@@ -26,3 +26,8 @@ jobs:
 
       - name: Validate Skill Frontmatter & Structure
         run: python scripts/validate-skills.py
+
+      - name: Validate framework manifest and bootstrap behavior
+        run: |
+          python scripts/bootstrap.py --check
+          python scripts/test_bootstrap.py
